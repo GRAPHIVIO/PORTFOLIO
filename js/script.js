@@ -204,4 +204,152 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, 100);
+
+    // Analytics Dashboard Charts
+    const initAnalyticsCharts = () => {
+        // Animate metric values
+        const animateMetrics = () => {
+            const metrics = [
+                { id: 'total-visitors', target: 2847 },
+                { id: 'page-views', target: 8932 },
+                { id: 'avg-session', target: '3:24', isTime: true },
+                { id: 'bounce-rate', target: 42, isPercentage: true }
+            ];
+
+            metrics.forEach(metric => {
+                const element = document.getElementById(metric.id);
+                if (element && !element.classList.contains('animated')) {
+                    element.classList.add('animated');
+                    if (metric.isTime) {
+                        // For time, just set it directly
+                        element.textContent = metric.target;
+                    } else if (metric.isPercentage) {
+                        // For percentage
+                        const updateCount = () => {
+                            const count = +element.innerText.replace('%', '');
+                            const inc = metric.target / 40;
+                            if (count < metric.target) {
+                                element.innerText = Math.ceil(count + inc) + '%';
+                                setTimeout(updateCount, 40);
+                            } else {
+                                element.innerText = metric.target + '%';
+                            }
+                        };
+                        updateCount();
+                    } else {
+                        // For numbers
+                        const updateCount = () => {
+                            const count = +element.innerText.replace(/,/g, '');
+                            const inc = metric.target / 40;
+                            if (count < metric.target) {
+                                element.innerText = Math.ceil(count + inc).toLocaleString();
+                                setTimeout(updateCount, 40);
+                            } else {
+                                element.innerText = metric.target.toLocaleString();
+                            }
+                        };
+                        updateCount();
+                    }
+                }
+            });
+        };
+
+        animateMetrics();
+        // Traffic Overview Chart
+        const trafficCtx = document.getElementById('trafficChart');
+        if (trafficCtx) {
+            new Chart(trafficCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    datasets: [{
+                        label: 'Visitors',
+                        data: [1200, 1350, 1180, 1420, 1680, 1520, 1890, 1750, 2100, 2280, 2450, 2847],
+                        borderColor: 'rgb(0, 63, 125)',
+                        backgroundColor: 'rgba(0, 63, 125, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }, {
+                        label: 'Page Views',
+                        data: [4800, 5200, 4900, 5800, 6500, 6200, 7200, 6800, 7800, 8200, 8500, 8932],
+                        borderColor: 'rgb(198, 164, 0)',
+                        backgroundColor: 'rgba(198, 164, 0, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Top Pages Chart
+        const pagesCtx = document.getElementById('pagesChart');
+        if (pagesCtx) {
+            new Chart(pagesCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Home', 'Projects', 'Services', 'About', 'Contact'],
+                    datasets: [{
+                        data: [35, 25, 20, 12, 8],
+                        backgroundColor: [
+                            'rgb(0, 63, 125)',
+                            'rgb(198, 164, 0)',
+                            'rgb(16, 185, 129)',
+                            'rgb(59, 130, 246)',
+                            'rgb(139, 92, 246)'
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                padding: 20,
+                                usePointStyle: true
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    };
+
+    // Initialize charts when analytics section comes into view
+    const analyticsSection = document.getElementById('analytics');
+    if (analyticsSection) {
+        const analyticsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    initAnalyticsCharts();
+                    analyticsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        analyticsObserver.observe(analyticsSection);
+    }
 });

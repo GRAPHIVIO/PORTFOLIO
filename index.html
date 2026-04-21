@@ -24,8 +24,8 @@
                 <li><a href="#services" class="nav-link">What I Do</a></li>
                 <li><a href="#journey" class="nav-link">My Journey</a></li>
                 <li><a href="#projects" class="nav-link">Work</a></li>
+                <li><a href="#design" class="nav-link">Design</a></li>
                 <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
-                <li><a href="#analytics" class="nav-link">Analytics</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -91,7 +91,7 @@
                 <div class="services-grid">
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-layer-group"></i>
+                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Full-Stack Development">
                         </div>
                         <h3 class="service-title">Full-Stack Development</h3>
                         <p class="service-desc">End-to-end web application development using modern frameworks to create
@@ -105,9 +105,9 @@
 
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-palette"></i>
+                            <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Graphic Design">
                         </div>
-                        <h3 class="service-title">Graphic Design</h3>
+                        <h3 class="service-title">Graphic Designer</h3>
                         <p class="service-desc">Creating compelling brand identities, UI/UX designs, marketing materials,
                             and visual assets that communicate your message effectively.</p>
                         <div class="service-tools">
@@ -119,9 +119,9 @@
 
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-film"></i>
+                            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Video Editing">
                         </div>
-                        <h3 class="service-title">Video Editing & Production</h3>
+                        <h3 class="service-title">Video Editor</h3>
                         <p class="service-desc">Producing high-quality promotional videos, tutorials, social media content,
                             and cinematic storytelling with professional editing and motion graphics.</p>
                         <div class="service-tools">
@@ -242,111 +242,53 @@
             </div>
         </section>
 
-        <!-- Visitor Analytics Dashboard -->
-        <section id="analytics" class="section section-alt fade-in">
+        <!-- Design Gallery Section -->
+        <section id="design" class="section fade-in">
             <div class="container">
-                <h2 class="section-title">Visitor Analytics Dashboard</h2>
-                <p class="section-subtitle">Real-time insights into website performance and visitor behavior. <em>(Demo data for illustration)</em></p>
+                <h2 class="section-title">Design Gallery</h2>
+                <p class="section-subtitle">A showcase of my graphic design projects, branding work, and visual creations.</p>
 
-                <div class="analytics-grid">
-                    <!-- Key Metrics Cards -->
-                    <div class="metric-card">
-                        <div class="metric-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div class="metric-content">
-                            <h3 class="metric-value" id="total-visitors">2,847</h3>
-                            <p class="metric-label">Total Visitors</p>
-                            <span class="metric-change positive">+12.5%</span>
+                <div class="design-gallery">
+                    <div class="design-item">
+                        <img src="images/designs/APRIL.jpg" alt="Design Work 1" class="design-image">
+                        <div class="design-overlay">
+                            <h3>Project Title 1</h3>
+                            <p>Brief description of the design project.</p>
                         </div>
                     </div>
-
-                    <div class="metric-card">
-                        <div class="metric-icon">
-                            <i class="fas fa-eye"></i>
-                        </div>
-                        <div class="metric-content">
-                            <h3 class="metric-value" id="page-views">8,932</h3>
-                            <p class="metric-label">Page Views</p>
-                            <span class="metric-change positive">+8.2%</span>
+                    <div class="design-item">
+                        <img src="images/designs/Dalmas.jpg" alt="Design Work 2" class="design-image">
+                        <div class="design-overlay">
+                            <h3>Project Title 2</h3>
+                            <p>Brief description of the design project.</p>
                         </div>
                     </div>
-
-                    <div class="metric-card">
-                        <div class="metric-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="metric-content">
-                            <h3 class="metric-value" id="avg-session">3:24</h3>
-                            <p class="metric-label">Avg. Session Duration</p>
-                            <span class="metric-change positive">+5.1%</span>
+                    <div class="design-item">
+                        <img src="images/designs/home crusade.jpg" alt="Design Work 3" class="design-image">
+                        <div class="design-overlay">
+                            <h3>Project Title 3</h3>
+                            <p>Brief description of the design project.</p>
                         </div>
                     </div>
-
-                    <div class="metric-card">
-                        <div class="metric-icon">
-                            <i class="fas fa-mouse-pointer"></i>
-                        </div>
-                        <div class="metric-content">
-                            <h3 class="metric-value" id="bounce-rate">42%</h3>
-                            <p class="metric-label">Bounce Rate</p>
-                            <span class="metric-change negative">-3.8%</span>
+                    <div class="design-item">
+                        <img src="images/designs/YOUTH.jpg" alt="Design Work 4" class="design-image">
+                        <div class="design-overlay">
+                            <h3>Project Title 4</h3>
+                            <p>Brief description of the design project.</p>
                         </div>
                     </div>
-                </div>
-
-                <!-- Charts Row -->
-                <div class="charts-container">
-                    <div class="chart-card">
-                        <h3 class="chart-title">Traffic Overview</h3>
-                        <canvas id="trafficChart"></canvas>
-                    </div>
-
-                    <div class="chart-card">
-                        <h3 class="chart-title">Top Pages</h3>
-                        <canvas id="pagesChart"></canvas>
-                    </div>
-                </div>
-
-                <!-- Additional Insights -->
-                <div class="insights-grid">
-                    <div class="insight-card">
-                        <h4>Device Breakdown</h4>
-                        <div class="device-stats">
-                            <div class="device-item">
-                                <span class="device-label">Desktop</span>
-                                <span class="device-value">65%</span>
-                            </div>
-                            <div class="device-item">
-                                <span class="device-label">Mobile</span>
-                                <span class="device-value">30%</span>
-                            </div>
-                            <div class="device-item">
-                                <span class="device-label">Tablet</span>
-                                <span class="device-value">5%</span>
-                            </div>
+                    <div class="design-item">
+                        <img src="images/designs/design.jpg" alt="Design Work 5" class="design-image">
+                        <div class="design-overlay">
+                            <h3>Project Title 5</h3>
+                            <p>Brief description of the design project.</p>
                         </div>
                     </div>
-
-                    <div class="insight-card">
-                        <h4>Geographic Distribution</h4>
-                        <div class="geo-stats">
-                            <div class="geo-item">
-                                <span class="geo-label">United States</span>
-                                <span class="geo-value">28%</span>
-                            </div>
-                            <div class="geo-item">
-                                <span class="geo-label">United Kingdom</span>
-                                <span class="geo-value">15%</span>
-                            </div>
-                            <div class="geo-item">
-                                <span class="geo-label">Canada</span>
-                                <span class="geo-value">12%</span>
-                            </div>
-                            <div class="geo-item">
-                                <span class="geo-label">Others</span>
-                                <span class="geo-value">45%</span>
-                            </div>
+                    <div class="design-item">
+                        <img src="images/designs/february.jpg" alt="Design Work 6" class="design-image">
+                        <div class="design-overlay">
+                            <h3>Project Title 6</h3>
+                            <p>Brief description of the design project.</p>
                         </div>
                     </div>
                 </div>
@@ -371,16 +313,17 @@
                                 <i class="fas fa-star"></i>
                             </div>
                             <p class="testimonial-text">
-                                "Emmanuel transformed our outdated e-commerce platform into a modern, high-performance system.
-                                His attention to detail and technical expertise helped us increase conversion rates by 40%.
-                                Highly recommended for any complex web development project."
+                                "I’m really impressed with your work,thank you for delivering such a beautiful poster
+                                in such a short time. 
+                                The quality exceeded my expectations, and you captured exactly what I had in mind. I truly appreciate your 
+                                professionalism and creativity,highly recommended!."
                             </p>
                         </div>
                         <div class="testimonial-author">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Sarah Johnson" class="testimonial-avatar">
+                            <img src="images/image.png" alt="Elvis Belengu" class="testimonial-avatar">
                             <div class="testimonial-info">
-                                <h4 class="testimonial-name">Sarah Johnson</h4>
-                                <p class="testimonial-role">CEO, TechStart Solutions</p>
+                                <h4 class="testimonial-name">Elvis Belengu</h4>
+                                <p class="testimonial-role">Youth Leader, Chevaywa Church.</p>
                             </div>
                         </div>
                     </div>
@@ -396,16 +339,19 @@
                                 <i class="fas fa-star"></i>
                             </div>
                             <p class="testimonial-text">
-                                "Working with Emmanuel was a game-changer for our startup. He not only delivered a robust
-                                backend system but also provided valuable insights on scaling and performance optimization.
-                                His code is clean, well-documented, and production-ready."
+                                "Working with you has honestly been such a great experience. You always deliver aesthetically pleasing 
+                                posters that really capture my desire. I love your attention to detail and how you turn simple ideas 
+                                into clean, elegant visuals. Thank you so much. Every design you’ve done for me feels thoughtful, 
+                                balanced, and well put together. If someone is looking for something subtle but still impactful, 
+                                you’re honestly the perfect person for it. I recommend you, sir."
                             </p>
                         </div>
                         <div class="testimonial-author">
-                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Michael Chen" class="testimonial-avatar">
+                            <img src="images/designs/image.png" alt="Michael Chen" class="testimonial-avatar">
                             <div class="testimonial-info">
-                                <h4 class="testimonial-name">Michael Chen</h4>
-                                <p class="testimonial-role">CTO, InnovateLabs</p>
+                                <h4 class="testimonial-name">Lilian Ger</h4>
+                                <p class="testimonial-role">Sales Represntative -<i>GRAPHIVIO Studios</i></p>
+
                             </div>
                         </div>
                     </div>
@@ -421,16 +367,15 @@
                                 <i class="fas fa-star"></i>
                             </div>
                             <p class="testimonial-text">
-                                "Emmanuel's automation solutions saved our team countless hours. The custom API integrations
-                                he built seamlessly connect our various tools and eliminated manual data entry. His
-                                problem-solving approach and communication throughout the project were exceptional."
+                                "Emmanuel has been instrumental in improving our communication through high-quality design and video content. 
+                                His contribution to our website system also helped streamline how we share information with members."
                             </p>
                         </div>
                         <div class="testimonial-author">
-                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Emily Rodriguez" class="testimonial-avatar">
+                            <img src="images/logo.png" alt="KSUCU-MC" class="testimonial-avatar">
                             <div class="testimonial-info">
-                                <h4 class="testimonial-name">Emily Rodriguez</h4>
-                                <p class="testimonial-role">Operations Manager, DataFlow Corp</p>
+                                <h4 class="testimonial-name">KSUCU-MC</h4>
+                                <p class="testimonial-role">Kisii University Christian Union</p>
                             </div>
                         </div>
                     </div>
@@ -496,9 +441,24 @@
                         Whether you need a complete technical overhaul, a new web application, or just want to consult
                         on your digital strategy, I'm here to help you hit your goals.
                     </p>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                    </form>
                     <div class="contact-actions">
-                        <a href="mailto:hello@example.com" class="btn btn-primary btn-lg"><i
-                                class="fas fa-envelope mr-2"></i> Book a Consultation</a>
+                        <a href="mailto:graphiviostudios@gmail.com" class="btn btn-outline btn-lg"><i
+                                class="fas fa-envelope mr-2"></i> Email Me Directly</a>
                         <a href="https://linkedin.com" target="_blank" class="btn btn-outline btn-lg"><i
                                 class="fab fa-linkedin mr-2"></i> Connect on LinkedIn</a>
                     </div>

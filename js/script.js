@@ -352,4 +352,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { threshold: 0.1 });
         analyticsObserver.observe(analyticsSection);
     }
+
+    // 10. Contact Form Submission
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (name && email && message) {
+                const subject = `Contact Form Submission from ${name}`;
+                const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+                const mailtoLink = `mailto:graphiviostudios@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                window.location.href = mailtoLink;
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+    }
 });
